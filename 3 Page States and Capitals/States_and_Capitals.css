@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+
+body{
+    background-image:url("1.jpg");
+    animation: backimage 4s infinite;
+    overflow-x: hidden;
+}
+
+@keyframes backimage{
+    0%{
+        background-image: url("1.jpg");
+    }
+    25%{
+        background-image: url("2.jpg");
+    }
+    50%{
+        background-image: url("3.jpg");
+    }
+    75%{
+        background-image: url("4.jpg");
+    }
+    100%{
+        background-image: url("5.jpg");
+    }
+}
+
+.top{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.heading
+{
+    background-image: linear-gradient(to right,orange,white,green);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 50px;
+}
+
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flip-box{
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.flip-img,.front,.back{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.flip-img{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px 2px grey;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.front{
+    position: absolute;
+    cursor: pointer;
+    backface-visibility: hidden;
+    background: black;
+}
+
+.back{
+    position: absolute;
+    transform: rotateY(180deg);
+    background: black;
+    padding: 20px;
+    color:#fff;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.flip-box:hover .flip-img{
+    transform: rotateY(180deg);
+}
+
+img{
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.capital{
+    text-align: center;
+    padding: 10px;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+.capitalhead{
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.State_name{
+    position: absolute;
+    font-family: 'Cinzel Decorative', cursive;
+    text-align: center;
+    font-weight: 900;
+    font-size: 28px;   
+    margin: 0px;
+    padding:5px;
+}

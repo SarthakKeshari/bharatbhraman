@@ -1,0 +1,479 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.splash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 200;
+    color: white;
+    text-align: center;
+    line-height: 90vh;
+}
+
+.splash.display-none{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: -10;
+    color: white;
+    text-align: center;
+    line-height: 90vh;
+    transition: all 1s;
+}
+
+.fade-in{
+    margin-top: 15%;
+    height: 300px;
+    width: 300px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+body{
+    perspective-origin:0% 50% ;
+    perspective: 800px;
+    background: black;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    animation-name: removescroll;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes removescroll{
+    to{
+        overflow-y: scroll;
+    }
+}
+
+.logo{
+    background-color: white;
+    border-bottom: 5px double black;
+}
+
+.Website_name{
+    align-self: center;
+    width: 1.4in;
+    height: 0.7in;
+    padding: 2px;
+
+}
+
+
+.navcontainer
+{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;    
+}
+
+.nav
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    background: black;
+    margin-right: 10px;
+    margin-top: 5px ;
+    transition: 0.5s;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.menu
+{
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    display: flex;
+    transition: 1s;
+}
+
+.menu p{
+    text-align: center;
+}
+
+.nav input:checked ~ .menu{
+    width: 600px;
+} 
+
+
+.menu li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+.menu li a{
+    align-content: center;
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    transition: 0.25s;
+}
+
+.menu li a:hover{
+    color: blue
+}
+
+.nav input{
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.nav span
+{
+    position: absolute;
+    left: 15px;
+    width: 50px;
+    height: 4px;
+    background: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.nav input:checked ~span{
+    background: grey;
+}
+
+.nav span:nth-child(2)
+{
+    transform: translateY(-8px);
+}
+
+.nav input:checked ~ span:nth-child(2)
+{
+    transform: translateY(0) rotate(45deg);
+}
+
+.nav span:nth-child(3)
+{
+    transform: translateY(8px);
+}
+
+.nav input:checked ~ span:nth-child(3)
+{
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+
+/*area{
+    outline-style: none; 
+  }*/
+
+.main_top{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+    height: 500px;
+
+    overflow: hidden;
+    transform: 0% 50%;
+}
+
+.slider
+{
+    position: relative;
+    width: 5600px;
+    animation: slide 20s infinite;
+}
+
+.slider img
+{
+    float: left;
+}
+
+@keyframes slide{
+    0%{
+        left: 0px;
+    }
+    20%{
+        left: 0px;
+    }
+    25%{
+        left: -1400px;
+    }
+    45%{
+        left: -1400px;
+    }
+    50%{
+        left: -2800px;
+    }
+    70%{
+        left: -2800px;
+    }
+    75%{
+        left: -4200px;
+    }
+    95%{
+        left: -4200px;
+    }
+}
+
+.main_middle{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.heading
+{
+    background-image: linear-gradient(to right,orange,white,green);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    margin-left: 300px;
+}
+
+.middle_area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    text-align: center;
+}
+
+img{
+    align-self: center;
+}
+
+.side_bar_left,.side_bar_right{
+    width: 25%;
+    background-color: red;
+    box-shadow: 0 0 4px 8px black;
+}
+
+.side_bar_left div,.side_bar_right div{
+    background-size: cover;
+    box-shadow: 0 0 4px 8px black;
+    height: 200px;
+}
+
+
+.lbox1
+{
+    background-image: url("1 Animate side images/1.jpg");
+    animation: lslide1 10s infinite;
+}
+
+@keyframes lslide1{
+    0%{
+        background-image: url("1 Animate side images/1.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/2.jpeg")
+    }
+}
+
+.lbox2
+{
+    background-image: url("1 Animate side images/3.jpg");
+    animation: lslide2 8s infinite;
+}
+
+@keyframes lslide2{
+    0%{
+        background-image: url("1 Animate side images/3.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/4.jpg")
+    }
+}
+
+.lbox3
+{
+    background-image: url("1 Animate side images/5.jpg");
+    animation: lslide3 12s infinite;
+}
+
+@keyframes lslide3{
+    0%{
+        background-image: url("1 Animate side images/5.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/6.jpeg")
+    }
+}
+
+.lbox4
+{
+    background-image: url("1 Animate side images/8.jpg");
+    animation: lslide4 8s infinite;
+}
+
+@keyframes lslide4{
+    0%{
+        background-image: url("1 Animate side images/8.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/7.jpg")
+    }
+}
+
+.lbox5
+{
+    background-image: url("1 Animate side images/9.jpg");
+    animation: lslide5 10s infinite;
+}
+
+@keyframes lslide5{
+    0%{
+        background-image: url("1 Animate side images/9.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/10.jpg")
+    }
+}
+
+.lbox6
+{
+    background-image: url("1 Animate side images/11.jpg");
+    animation: lslide6 12s infinite;
+}
+
+@keyframes lslide6{
+    0%{
+        background-image: url("1 Animate side images/11.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/12.jpg")
+    }
+}
+
+.rbox1
+{
+    background-image: url("1 Animate side images/13.jpg");
+    animation: rslide1 10s infinite;
+}
+
+@keyframes rslide1{
+    0%{
+        background-image: url("1 Animate side images/13.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/14.jpg")
+    }
+}
+
+.rbox2
+{
+    background-image: url("1 Animate side images/15.jpg");
+    animation: rslide2 8s infinite;
+}
+
+@keyframes rslide2{
+    0%{
+        background-image: url("1 Animate side images/15.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/16.jpg")
+    }
+}
+
+.rbox3
+{
+    background-image: url("1 Animate side images/17.jpg");
+    animation: rslide3 12s infinite;
+}
+
+@keyframes rslide3{
+    0%{
+        background-image: url("1 Animate side images/17.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/18.jpg");
+    }
+}
+
+.rbox4
+{
+    background-image: url("1 Animate side images/19.jpg");
+    animation: rslide4 8s infinite;
+}
+
+@keyframes rslide4{
+    0%{
+        background-image: url("1 Animate side images/19.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/20.jpg")
+    }
+}
+
+.rbox5
+{
+    background-image: url("1 Animate side images/21.jpg");
+    animation: rslide5 10s infinite;
+}
+
+@keyframes rslide5{
+    0%{
+        background-image: url("1 Animate side images/21.jpg");
+    }
+    50%{
+        background-image: url("1 Animate side images/22.jpg")
+    }
+}
+
+.rbox6
+{
+    background-image: url("1 Animate side images/23.jpeg");
+    animation: rslide6 12s infinite;
+}
+
+@keyframes rslide6{
+    0%{
+        background-image: url("1 Animate side images/23.jpeg");
+    }
+    50%{
+        background-image: url("1 Animate side images/24.jpg")
+    }
+}
+
+.main_bottom{
+    height: 60px;
+    border-top: 10px double black;
+    margin-top: 8px;
+    background-color: white;
+}
+
+.main_bottom p{
+    text-align: end;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+
